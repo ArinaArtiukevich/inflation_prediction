@@ -7,6 +7,8 @@ from model.gradient_boosting_builder import GradientBoostingRegressor
 from model.linear_regression_builder import LinearRegressionBuilder
 from model.lstm_builder import LSTM_Builder
 
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None)
 
 class ModelExecutor:
 

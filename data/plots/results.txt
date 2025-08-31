@@ -1,0 +1,209 @@
+
+Selected 18 features: ['T10YIE', 'is_peak', 'is_trough', 'lag_1', 'month_2', 'lag_4', 'month_12', 'tema_0.5', 'stoch_k', 'adx', 'max_14', 'dayofweek_3', 'q75_18', 'ema_ratio_0.7_0.3', 'stoch_d', 'kurt_20', 'lag_14', 'lag_13']
+Final R²: 0.9576
+Best parameters: {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 500, 'subsample': 0.8}
+Cross-Validated R²: 0.5878
+Cross-Validated MSE: 0.0577
+Test R²: 0.7637
+Test MSE: 0.0072
+Test MAE: 0.0470
+Test RMSE: 0.0846
+Test MAPE: 1.8721%
+Test SMAPE: 1.9039%
+
+Periods with largest errors (top 10 days by mean absolute error) for gradient_boosting:
+date
+2022-02-16    0.437685
+2022-03-25    0.345910
+2022-03-24    0.335349
+2022-03-22    0.324484
+2022-03-23    0.306876
+2022-04-13    0.301942
+2022-04-07    0.277914
+2022-04-08    0.265273
+2022-03-29    0.263597
+2022-03-28    0.262867
+Name: abs_residual, dtype: float64
+[I 2025-08-30 17:47:44,366] A new study created in memory with name: no-name-1a22caae-c361-4b7d-9b4e-a33830d17936
+[I 2025-08-30 17:47:56,538] Trial 0 finished with value: 0.7658666233769327 and parameters: {'sequence_length': 20, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.2, 'learning_rate': 0.001}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:48:05,544] Trial 1 finished with value: 0.024097580739658397 and parameters: {'sequence_length': 30, 'batch_size': 16, 'hidden_size': 50, 'dropout': 0.3, 'learning_rate': 0.01}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:48:07,732] Trial 2 finished with value: -0.9221043054798803 and parameters: {'sequence_length': 20, 'batch_size': 16, 'hidden_size': 50, 'dropout': 0.3, 'learning_rate': 0.01}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:48:11,387] Trial 3 finished with value: -0.02688687479697549 and parameters: {'sequence_length': 20, 'batch_size': 16, 'hidden_size': 50, 'dropout': 0.3, 'learning_rate': 0.01}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:48:26,275] Trial 4 finished with value: -0.172548220573026 and parameters: {'sequence_length': 30, 'batch_size': 16, 'hidden_size': 100, 'dropout': 0.3, 'learning_rate': 0.01}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:48:38,416] Trial 5 finished with value: 0.6736665632082754 and parameters: {'sequence_length': 20, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.3, 'learning_rate': 0.001}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:48:44,864] Trial 6 finished with value: -0.7251000442281688 and parameters: {'sequence_length': 10, 'batch_size': 16, 'hidden_size': 100, 'dropout': 0.2, 'learning_rate': 0.01}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:48:58,075] Trial 7 finished with value: 0.5585947701713123 and parameters: {'sequence_length': 30, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.3, 'learning_rate': 0.001}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:49:02,140] Trial 8 finished with value: -0.2365858482055474 and parameters: {'sequence_length': 30, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.3, 'learning_rate': 0.01}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:49:04,141] Trial 9 finished with value: -0.1508602149329754 and parameters: {'sequence_length': 20, 'batch_size': 32, 'hidden_size': 50, 'dropout': 0.2, 'learning_rate': 0.01}. Best is trial 0 with value: 0.7658666233769327.
+[I 2025-08-30 17:49:10,902] Trial 10 finished with value: 0.8118672433497832 and parameters: {'sequence_length': 10, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.2, 'learning_rate': 0.001}. Best is trial 10 with value: 0.8118672433497832.
+[I 2025-08-30 17:49:17,604] Trial 11 finished with value: 0.8225418009336785 and parameters: {'sequence_length': 10, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.2, 'learning_rate': 0.001}. Best is trial 11 with value: 0.8225418009336785.
+[I 2025-08-30 17:49:24,335] Trial 12 finished with value: 0.8156927783814574 and parameters: {'sequence_length': 10, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.2, 'learning_rate': 0.001}. Best is trial 11 with value: 0.8225418009336785.
+[I 2025-08-30 17:49:31,290] Trial 13 finished with value: 0.77175473138643 and parameters: {'sequence_length': 10, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.2, 'learning_rate': 0.001}. Best is trial 11 with value: 0.8225418009336785.
+[I 2025-08-30 17:49:38,489] Trial 14 finished with value: 0.8445218431708822 and parameters: {'sequence_length': 10, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.2, 'learning_rate': 0.001}. Best is trial 14 with value: 0.8445218431708822.
+Best parameters: {'sequence_length': 10, 'batch_size': 32, 'hidden_size': 100, 'dropout': 0.2, 'learning_rate': 0.001}
+Validation R²: 0.8445
+Train MSE: 0.0168
+Test R²: 0.0062
+Test MSE: 0.0312
+Test MAE: 0.1437
+Test RMSE: 0.1765
+Test MAPE: 5.9347%
+Test SMAPE: 6.1904%
+
+Periods with largest errors (top 10 days by mean absolute error) for lstm:
+date
+2022-02-16    0.494613
+2022-03-22    0.465200
+2021-11-09    0.427809
+2022-03-24    0.426086
+2022-03-25    0.421904
+2022-03-23    0.410950
+2023-08-02    0.397463
+2023-05-26    0.377930
+2021-10-08    0.359948
+2024-10-10    0.347129
+Name: abs_residual, dtype: float64
+Best alpha: 0.01
+Cross-Validated R²: 0.9367
+Cross-Validated MSE: 0.0033
+Feature Coefficients:
+T10YIE               1.213059
+is_peak             -0.038215
+is_trough            0.046164
+lag_1               -0.255949
+month_2              0.018844
+lag_4               -0.063456
+month_12             0.035334
+tema_0.5             0.077921
+stoch_k              0.000671
+adx                 -0.000516
+max_14               0.078095
+dayofweek_3         -0.007853
+q75_18              -0.052785
+ema_ratio_0.7_0.3   -0.053313
+stoch_d             -0.000514
+kurt_20             -0.001346
+lag_14              -0.051320
+lag_13               0.040614
+dtype: float64
+Test R²: 0.9140
+Test MSE: 0.0026
+Test MAE: 0.0307
+Test RMSE: 0.0510
+Test MAPE: 1.2903%
+Test SMAPE: 1.2889%
+
+Periods with largest errors (top 10 days by mean absolute error) for linear_regression:
+date
+2022-02-16    0.390081
+2024-05-23    0.228940
+2022-09-02    0.225353
+2021-11-10    0.214873
+2022-10-07    0.208410
+2022-11-10    0.167867
+2022-04-14    0.155868
+2022-04-13    0.138482
+2023-02-17    0.116332
+2025-04-17    0.114256
+Name: abs_residual, dtype: float64
+Best parameters: {'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 500, 'subsample': 0.8}
+Cross-Validated R²: 0.5878
+Cross-Validated MSE: 0.0577
+Test R²: 0.7637
+Test MSE: 0.0072
+Test MAE: 0.0470
+Test RMSE: 0.0846
+Test MAPE: 1.8721%
+Test SMAPE: 1.9039%
+
+Periods with largest errors (top 10 days by mean absolute error) for gradient_boosting:
+date
+2022-02-16    0.437685
+2022-03-25    0.345910
+2022-03-24    0.335349
+2022-03-22    0.324484
+2022-03-23    0.306876
+2022-04-13    0.301942
+2022-04-07    0.277914
+2022-04-08    0.265273
+2022-03-29    0.263597
+2022-03-28    0.262867
+Name: abs_residual, dtype: float64
+
+Train MSE: 0.0164
+Test R²: 0.1401
+Test MSE: 0.0270
+Test MAE: 0.1398
+Test RMSE: 0.1642
+Test MAPE: 5.8013%
+Test SMAPE: 6.0207%
+
+Periods with largest errors (top 10 days by mean absolute error) for lstm:
+date
+2022-02-16    0.631186
+2022-03-22    0.516298
+2021-11-09    0.466799
+2021-10-08    0.417782
+2022-03-25    0.396394
+2022-03-24    0.337105
+2024-08-05    0.337097
+2022-03-23    0.329050
+2022-04-12    0.326579
+2022-03-28    0.325420
+Name: abs_residual, dtype: float64
+Best alpha: 0.01
+Cross-Validated R²: 0.9367
+Cross-Validated MSE: 0.0033
+Feature Coefficients:
+T10YIE               1.213059
+is_peak             -0.038215
+is_trough            0.046164
+lag_1               -0.255949
+month_2              0.018844
+lag_4               -0.063456
+month_12             0.035334
+tema_0.5             0.077921
+stoch_k              0.000671
+adx                 -0.000516
+max_14               0.078095
+dayofweek_3         -0.007853
+q75_18              -0.052785
+ema_ratio_0.7_0.3   -0.053313
+stoch_d             -0.000514
+kurt_20             -0.001346
+lag_14              -0.051320
+lag_13               0.040614
+dtype: float64
+Test R²: 0.9140
+Test MSE: 0.0026
+Test MAE: 0.0307
+Test RMSE: 0.0510
+Test MAPE: 1.2903%
+Test SMAPE: 1.2889%
+
+Periods with largest errors (top 10 days by mean absolute error) for linear_regression:
+date
+2022-02-16    0.390081
+2024-05-23    0.228940
+2022-09-02    0.225353
+2021-11-10    0.214873
+2022-10-07    0.208410
+2022-11-10    0.167867
+2022-04-14    0.155868
+2022-04-13    0.138482
+2023-02-17    0.116332
+2025-04-17    0.114256
+Name: abs_residual, dtype: float64
+
+Model Comparison Metrics:
+               Model        R²       MSE       MAE      RMSE      MAPE  \
+0               lstm  0.140075  0.026962  0.139829  0.164202  5.801294
+1  linear_regression  0.913996  0.002606  0.030678  0.051047  1.290299
+2  gradient_boosting  0.763679  0.007160  0.046973  0.084618  1.872108
+
+      SMAPE
+0  6.020706
+1  1.288931
+2  1.903912
+
+Best Model (by R²): linear_regression

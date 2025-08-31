@@ -63,6 +63,8 @@ class GradientBoostingRegressor(ModelBuilder):
     def plot_feature_importance(self):
         importance = self.model.feature_importances_
         indices = np.argsort(importance)[::-1]
+        print([self.selected_features[i] for i in indices])
+        print(importance)
         plt.figure(figsize=(12, 6))
         plt.bar(range(len(self.selected_features)), importance[indices], align='center')
         plt.xticks(range(len(self.selected_features)),
@@ -72,7 +74,6 @@ class GradientBoostingRegressor(ModelBuilder):
         plt.title('Gradient Boosting Feature Importance')
         plt.tight_layout()
         plt.savefig(os.path.join(self.plots_path, 'gbr_feature_importance.png'))
-        plt.show()
 
 
 if __name__ == '__main__':

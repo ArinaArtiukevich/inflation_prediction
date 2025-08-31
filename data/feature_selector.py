@@ -25,7 +25,7 @@ class FeatureSelector:
         self.backward_selected_features = []
         self.backward_r2_scores = []
 
-    def forward_selection(self, max_features=20, improvement_threshold=0.005, cv_folds=5):
+    def forward_selection(self, max_features=20, improvement_threshold=0.001, cv_folds=5):
         target = pd.Series(self.df_features[f'{FEATURE_NAME}']).shift(-1)
         valid_indices = self.df_features.index.intersection(target.dropna().index)
         X = self.df_features.loc[valid_indices]
@@ -85,7 +85,6 @@ class FeatureSelector:
         plt.title('Forward Selection: R² vs Number of Features')
         plt.grid(True)
         plt.savefig(os.path.join(self.plots_path, 'forward_selection_r2.png'))
-        plt.show()
 
     def backward_selection(self, min_features=20, degradation_threshold=0.001, cv_folds=5):
         target = pd.Series(self.df_features[f'{FEATURE_NAME}']).shift(-1)
@@ -150,7 +149,6 @@ class FeatureSelector:
         plt.title('Backward Selection: R² vs Number of Features')
         plt.grid(True)
         plt.savefig(os.path.join(self.plots_path, 'backward_selection_r2.png'))
-        plt.show()
 
     def get_selected_features(self, method='forward'):
         if method == 'forward':

@@ -30,10 +30,6 @@ class DataExplorer:
         self.df.dropna(subset=[f'{FEATURE_NAME}'], inplace=True)
         return self.df
 
-    def difference_data(self):
-        self.df_diff = self.df[f'{FEATURE_NAME}'].diff().dropna()
-        self.df['diff_' + FEATURE_NAME] = self.df_diff
-
     def get_statistics(self):
         desc_stats = self.df[f'{FEATURE_NAME}'].describe(percentiles=[0.25, 0.5, 0.75]).round(4)
         print("Descriptive Statistics:")
@@ -182,7 +178,6 @@ class DataExplorer:
 if __name__ == '__main__':
     np.random.seed(42)
     data_explorer = DataExplorer()
-    data_explorer.difference_data()
     data_explorer.get_statistics()
     data_explorer.plot_distribution()
     data_explorer.detect_outliers()

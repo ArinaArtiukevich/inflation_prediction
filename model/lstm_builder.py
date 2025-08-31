@@ -166,7 +166,6 @@ class LSTM_Builder(ModelBuilder):
         plt.legend()
         plt.grid(True)
         plt.savefig('lstm_learning_curves.png')
-        plt.show()
 
 
 if __name__ == '__main__':

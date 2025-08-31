@@ -18,8 +18,8 @@ class ModelBuilder:
         self.data_path = os.path.join(path, 'input', self.file_name)
         self.plots_path = os.path.join(path, 'data', 'plots')
 
-        # todo
-        self.selected_features = self._get_best_features()
+        # self.selected_features = self._get_best_features()
+        self.selected_features = ['T10YIE', 'is_peak', 'is_trough', 'lag_1', 'month_2', 'lag_4', 'month_12', 'tema_0.5', 'stoch_k', 'adx', 'max_14', 'dayofweek_3', 'q75_18', 'ema_ratio_0.7_0.3', 'stoch_d', 'kurt_20', 'lag_14', 'lag_13']
         self.X_train, self.X_val, self.X_test, self.y_train, self.y_val, self.y_test = self._get_train_test_val_split(
             train_size=0.6, val_size=0.2)
 
@@ -44,6 +44,10 @@ class ModelBuilder:
         self.y_train = df_features[f'{self.FEATURE_NAME}_next_day'].iloc[:train_idx]
         self.y_val = df_features[f'{self.FEATURE_NAME}_next_day'].iloc[train_idx:val_idx]
         self.y_test = df_features[f'{self.FEATURE_NAME}_next_day'].iloc[val_idx:]
+
+        # print(self.X_train.index)
+        # print(self.X_val.index)
+        # print(self.X_test.index)
 
         return self.X_train, self.X_val, self.X_test, self.y_train, self.y_val, self.y_test
 
@@ -82,7 +86,6 @@ class ModelBuilder:
         plt.legend()
         plt.grid(True)
         plt.savefig(os.path.join(self.plots_path, f'{model_name}_predictions.png'))
-        plt.show()
 
     def explore_residuals(self, y_pred, y_true, model_name):
         residuals = y_true - y_pred
@@ -105,7 +108,6 @@ class ModelBuilder:
         plt.legend()
         plt.grid(True)
         plt.savefig(os.path.join(self.plots_path, f'{model_name}_residuals.png'))
-        plt.show()
 
     def plot_time_residuals(self, time_index, residuals, model_name):
         plt.figure(figsize=(12, 6))
@@ -116,7 +118,6 @@ class ModelBuilder:
         plt.ylabel('Residual')
         plt.legend()
         plt.savefig(os.path.join(self.plots_path, f'{model_name}_residuals_time.png'))
-        plt.show()
 
     def plot_hist_residuals(self, residuals, model_name):
         plt.figure(figsize=(8, 6))
@@ -125,7 +126,6 @@ class ModelBuilder:
         plt.xlabel('Residual')
         plt.ylabel('Frequency')
         plt.savefig(os.path.join(self.plots_path, f'{model_name}_residuals_histogram.png'))
-        plt.show()
 
     def get_largest_errors_period(self, time_index, residuals, model_name):
         error_df = pd.DataFrame({
@@ -151,4 +151,7 @@ class ModelBuilder:
         plt.xticks(rotation=45)
         plt.tight_layout()
         plt.savefig(os.path.join(self.plots_path, f'{model_name}_high_error_periods.png'))
-        plt.show()
+
+if __name__ == '__main__':
+    np.random.seed(42)
+    model_builder = ModelBuilder()
